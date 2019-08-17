@@ -1,0 +1,28 @@
+data:
+  type: image
+  train_dir: /content/drive/My Drive/Other/Umami/data
+  img_size: 256
+generator:
+  name: resnet
+  kwargs:
+    nfilter: 64
+    nfilter_max: 1024
+    embed_size: 1
+discriminator:
+  name: resnet
+  kwargs:
+    nfilter: 64
+    nfilter_max: 1024
+    embed_size: 1
+z_dist:
+  type: gauss
+  dim: 256
+training:
+  out_dir: output/umami
+test:
+  batch_size: 32
+  sample_size: 64
+  sample_nrow: 8
+interpolations:
+  nzs: 10
+  nsubsteps: 75
